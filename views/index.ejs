@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم الكرم خانة - المذاق السوري</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">الكرم خانة</div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>أهلاً بكم في الكرم خانة</h1>
+            <p>شاورما وبروستد سوري على أصوله</p>
+            <div class="order-btn">
+                <span class="glf-button" data-glf-cuid="27a134ff-3f04-48c7-b274-58f1d05a5afa" data-glf-ruid="a518c4ad-7fe7-43eb-abf1-429d3c81fa6d"> 
+                   شاهد المنيو واطلب الآن
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <h2>أشهر الوجبات</h2>
+        <div class="menu-grid">
+            <% meals.forEach(meal => { %>
+                <div class="meal-card">
+                    <img src="/images/<%= meal.image %>" alt="<%= meal.name %>">
+                    <div class="info">
+                        <h3><%= meal.name %></h3>
+                        <p class="price"><%= meal.price %> ج.م</p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 مطعم الكرم خانة - الزقازيق / العاشر</p>
+    </footer>
+
+    <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <title>لوحة إدارة الكرم خانة</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <h1>إدارة المنيو</h1>
+        
+        <form action="/admin/add" method="POST" class="add-form">
+            <input type="text" name="name" placeholder="اسم الوجبة" required>
+            <input type="number" name="price" placeholder="السعر" required>
+            <select name="image">
+                <option value="IMG-20250831-WA0000.jpg">صورة 1</option>
+                <option value="IMG-20250831-WA0001.jpg">صورة 2</option>
+                <option value="IMG-20250831-WA0015.jpg">صورة 3</option>
+            </select>
+            <button type="submit">إضافة وجبة للموقع</button>
+        </form>
+
+        <div class="meal-list">
+            <% meals.forEach(meal => { %>
+                <div class="meal-item">
+                    <span><%= meal.name %> - <%= meal.price %> ج.م</span>
+                    <form action="/admin/delete/<%= meal.id %>" method="POST">
+                        <button type="submit">حذف</button>
+                    </form>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
