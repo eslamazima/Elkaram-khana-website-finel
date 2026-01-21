@@ -3,35 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مطعم الكرم خانة - المذاق السوري</title>
+    <title>الكرم خانة | الفخامة السورية</title>
     <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header><h1>الكرم خانة</h1></header>
-    
-    <section class="hero">
-        <h2>أصل المذاق السوري</h2>
-        <p>شاورما، بروستد، ومشويات على الأصول</p>
-        <div class="order-box">
-            <span class="glf-button" data-glf-cuid="27a134ff-3f04-48c7-b274-58f1d05a5afa" data-glf-ruid="a518c4ad-7fe7-43eb-abf1-429d3c81fa6d">مشاهدة المنيو والطلب</span>
-        </div>
-    </section>
 
-    <main class="menu-container">
-        <div class="grid">
-            <% meals.forEach(meal => { %>
-                <div class="card">
-                    <img src="/images/<%= meal.image %>" alt="<%= meal.name %>">
-                    <div class="card-info">
-                        <h3><%= meal.name %></h3>
-                        <p class="price"><%= meal.price %> ج.م</p>
-                    </div>
-                </div>
-            <% }) %>
-        </div>
-    </main>
+<header>
+    <div class="logo-container">
+        <img src="/images/logo.png" class="logo-img" alt="لوجو الكرم خانة">
+        <a href="/" class="logo-text">الكرم خانة</a>
+    </div>
+    <nav>
+        <a href="#about">من نحن</a>
+        <a href="#gallery">الصور</a>
+        <a href="#location">موقعنا</a>
+        <span class="glf-button" data-glf-cuid="27a134ff-3f04-48c7-b274-58f1d05a5afa" data-glf-ruid="a518c4ad-7fe7-43eb-abf1-429d3c81fa6d">اطلب الآن</span>
+    </nav>
+</header>
 
-    <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+<section class="hero" style="height: 100vh; display: flex; align-items: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/IMG-20250831-WA0003.jpg') center/cover;">
+    <div style="max-width: 800px;">
+        <h1 style="font-size: 4rem; margin-bottom: 20px;">كرم الضيافة <br><span style="color: var(--primary);">وأصل المذاق</span></h1>
+        <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 30px;">نقدم لكم أجود أنواع الشاورما والبروستد السوري في العاشر من رمضان والزقازيق.</p>
+        <span class="glf-button" data-glf-cuid="27a134ff-3f04-48c7-b274-58f1d05a5afa" data-glf-ruid="a518c4ad-7fe7-43eb-abf1-429d3c81fa6d">فتح المنيو الكامل</span>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">من نحن</h2>
+    <div style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 300px;">
+            <p>بدأنا في "الكرم خانة" برؤية واضحة: نقل التجربة السورية الأصلية إلى قلب مصر. نحن لا نقدم مجرد وجبات، بل نقدم "كرم" في كل تفصيلة، من اختيار اللحوم الطازجة يومياً وحتى خلطة البهارات السرية التي تميزنا.</p>
+        </div>
+        <img src="/images/IMG-20250831-WA0015.jpg" style="flex: 1; min-width: 300px; border-radius: 20px; box-shadow: 20px 20px 0 var(--primary);">
+    </div>
+</section>
+
+<section id="gallery" style="background: var(--surface);">
+    <h2 class="section-title">ألبوم الصور</h2>
+    <div class="gallery-grid">
+        <img src="/images/IMG-20250831-WA0000.jpg">
+        <img src="/images/IMG-20250831-WA0001.jpg">
+        <img src="/images/IMG-20250831-WA0002.jpg">
+        <img src="/images/IMG-20250831-WA0004.jpg">
+        <img src="/images/IMG-20250831-WA0005.jpg">
+        <img src="/images/IMG-20250831-WA0006.jpg">
+    </div>
+</section>
+
+<section id="location">
+    <h2 class="section-title">أين تجدنا</h2>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110195.96803251206!2d31.6575089!3d30.2905963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1457f60742cd6177%3A0x673327685652597b!2z2KfZhNi52KfYtNixINmF2YYg2LHZhdC22KfZhg!5e0!3m2!1sar!2seg!4v1710000000000!5m2!1sar!2seg" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+
+<footer style="background: #000; padding: 50px 10%; text-align: center; border-top: 1px solid var(--surface);">
+    <div style="margin-bottom: 30px;">
+        <a href="/policy" style="color: var(--gray); text-decoration: none; font-size: 13px;">سياسة الخصوصية</a> | 
+        <a href="/terms" style="color: var(--gray); text-decoration: none; font-size: 13px;">الشروط والأحكام</a>
+    </div>
+    <p style="color: var(--gray);">© 2026 الكرم خانة. جميع الحقوق محفوظة.</p>
+    <div style="position: fixed; bottom: 20px; left: 20px; z-index: 9999;">
+        <span class="glf-button" data-glf-cuid="27a134ff-3f04-48c7-b274-58f1d05a5afa" data-glf-ruid="a518c4ad-7fe7-43eb-abf1-429d3c81fa6d">اطلب الآن 🚀</span>
+    </div>
+</footer>
+
+<script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
 </body>
 </html>
