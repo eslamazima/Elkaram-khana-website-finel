@@ -1,10 +1,72 @@
-:root { --primary: #d35400; --dark: #2c1e1a; }
-body { font-family: 'Cairo', sans-serif; margin: 0; background: #fdfaf6; direction: rtl; }
-header { background: var(--dark); padding: 1.5rem; text-align: center; color: var(--primary); font-size: 2rem; border-bottom: 4px solid var(--primary); }
-.hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/IMG-20250831-WA0003.jpg'); height: 350px; background-size: cover; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-.glf-button { background: var(--primary) !important; color: white !important; padding: 15px 30px !important; border-radius: 50px !important; font-weight: bold; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px; }
-.card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.card img { width: 100%; height: 200px; object-fit: cover; }
-.card-info { padding: 15px; text-align: center; }
-.price { color: var(--primary); font-weight: bold; font-size: 1.2rem; }
+:root {
+    --primary: #f39c12;    /* ذهبي برتقالي */
+    --accent: #e67e22;
+    --dark: #0f0f0f;       /* أسود عميق */
+    --surface: #1a1a1a;    /* أسود فاتح للبطاقات */
+    --text: #ffffff;
+    --gray: #a0a0a0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
+
+body { background-color: var(--dark); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+/* هيدر عصري */
+header {
+    background: rgba(15, 15, 15, 0.95);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(243, 156, 18, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.logo-container { display: flex; align-items: center; gap: 10px; }
+.logo-img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--primary); }
+.logo-text { font-size: 22px; font-weight: 900; color: var(--primary); text-decoration: none; }
+
+nav a { color: var(--white); text-decoration: none; margin-left: 20px; font-size: 14px; transition: 0.3s; }
+nav a:hover { color: var(--primary); }
+
+/* زر الطلب المحترف */
+.glf-button {
+    background: linear-gradient(45deg, var(--primary), var(--accent)) !important;
+    color: #000 !important;
+    font-weight: 900 !important;
+    padding: 12px 25px !important;
+    border-radius: 8px !important;
+    cursor: pointer;
+    border: none !important;
+    transition: 0.3s !important;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+}
+
+.glf-button:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(243, 156, 18, 0.5); }
+
+/* الأقسام */
+section { padding: 80px 10%; }
+.section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: var(--primary); }
+
+/* شبكة الصور (البوم) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+.gallery-grid img {
+    width: 100%; height: 200px; object-fit: cover; border-radius: 12px;
+    filter: grayscale(30%); transition: 0.5s; cursor: pointer;
+}
+.gallery-grid img:hover { filter: grayscale(0%); transform: scale(1.03); }
+
+/* الخريطة */
+.map-container {
+    border-radius: 20px; overflow: hidden; border: 2px solid var(--surface);
+    height: 400px; width: 100%;
+}
