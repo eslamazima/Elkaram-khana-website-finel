@@ -51,3 +51,11 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on port ${PORT}`);
 });
+app.get('/policy', (req, res) => {
+    res.send("<h1>سياسة الخصوصية</h1><p>نحن نحترم خصوصية عملائنا في الكرم خانة...</p>"); 
+    // يمكنك إنشاء ملف ejs منفصل لها لاحقاً
+});
+
+app.get('/terms', (req, res) => {
+    res.send("<h1>الشروط والأحكام</h1><p>شروط استخدام خدمة التوصيل والطلب أونلاين...</p>");
+});
