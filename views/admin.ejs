@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>إدارة المنيو - الكرم خانة</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; direction: rtl; background: #eee; }
+        .form-box { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        input, select { padding: 10px; margin: 5px; width: 200px; }
+        .meal-item { background: white; padding: 10px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: center; }
+        button { background: #d35400; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+        .del-btn { background: #c0392b; }
+    </style>
+</head>
+<body>
+    <h1>لوحة تحكم المنيو</h1>
+    <div class="form-box">
+        <h3>إضافة وجبة جديدة</h3>
+        <form action="/add" method="POST">
+            <input type="text" name="name" placeholder="اسم الوجبة" required>
+            <input type="number" name="price" placeholder="السعر" required>
+            <input type="text" name="image" placeholder="اسم الصورة (مثال: img1.jpg)" required>
+            <button type="submit">إضافة للموقع</button>
+        </form>
+    </div>
+
+    <div class="list">
+        <h3>الوجبات الحالية</h3>
+        <% meals.forEach(meal => { %>
+            <div class="meal-item">
+                <span><%= meal.name %> - <%= meal.price %> ج.م</span>
+                <form action="/delete/<%= meal.id %>" method="POST">
+                    <button type="submit" class="del-btn">حذف</button>
+                </form>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>

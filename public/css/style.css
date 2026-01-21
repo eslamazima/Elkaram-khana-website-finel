@@ -1,0 +1,10 @@
+:root { --primary: #d35400; --dark: #2c1e1a; }
+body { font-family: 'Cairo', sans-serif; margin: 0; background: #fdfaf6; direction: rtl; }
+header { background: var(--dark); padding: 1.5rem; text-align: center; color: var(--primary); font-size: 2rem; border-bottom: 4px solid var(--primary); }
+.hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/IMG-20250831-WA0003.jpg'); height: 350px; background-size: cover; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.glf-button { background: var(--primary) !important; color: white !important; padding: 15px 30px !important; border-radius: 50px !important; font-weight: bold; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px; }
+.card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.card img { width: 100%; height: 200px; object-fit: cover; }
+.card-info { padding: 15px; text-align: center; }
+.price { color: var(--primary); font-weight: bold; font-size: 1.2rem; }
